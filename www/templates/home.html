@@ -1,0 +1,79 @@
+<ion-side-menus>
+
+    <!-- Center content -->
+    <ion-side-menu-content>
+
+        <ion-header-bar class="bar-dark">
+            <button class="button button-icon" ng-click="toggleDate()">
+                <i class="icon ion-ios7-drag"></i>
+            </button>
+            <!--<button class="button button-icon icon ion-ios7-minus-outline" -->
+            <!--ng-click="data.showDelete = !data.showDelete; data.showReorder = false">-->
+            <!--</button>-->
+            <h1 class="title text">{{activeProject.title}}</h1>
+            <!-- New Task button-->
+            <button class="button button-icon" ng-click="inputMeasurements()">
+                <i class="icon ion-ios7-compose-outline"></i>
+            </button>
+        </ion-header-bar>
+
+        <ion-content scroll="false">
+            <ion-list class="transparent-menu" show-delete="data.showDelete" show-reorder="data.showReorder">
+                <ion-item ng-repeat="task in activeProject.tasks">
+
+                    <div class="row">
+                        <div class="col col-90 black-text">{{task.title}}</div>
+                        <div class="col col-10 black-text">{{task.value}}</div>
+                    </div>
+
+                    <ion-delete-button class="ion-minus-circled"
+                                       ng-click="onItemDelete(task)">
+                    </ion-delete-button>
+                    <ion-option-button class="button-calm"
+                                       ng-click="edit(task)">
+                        Edit
+                    </ion-option-button>
+                    <ion-option-button class="button-assertive"
+                                       ng-click="onItemDelete(task)">
+                        Delete
+                    </ion-option-button>
+                    <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)">
+                    </ion-reorder-button>
+
+                </ion-item>
+            </ion-list>
+        </ion-content>
+
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-dark">
+            <h1 class="title text">Date</h1>
+            <button class="button button-icon ion-ios7-plus-empty" ng-click="newDate()">
+            </button>
+        </ion-header-bar>
+        <ion-content scroll="false">
+            <ion-list>
+                <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)" ng-class="{active: activeProject == project}">
+                    <div class="black-text">{{project.title}}</div>
+                    <ion-option-button class="button-calm"
+                                       ng-click="edit(project)">
+                        Edit
+                    </ion-option-button>
+                    <ion-option-button class="button-assertive"
+                                       ng-click="onItemDelete(project)">
+                        Delete
+                    </ion-option-button>
+                </ion-item>
+            </ion-list>
+            <div class="bar bar-footer">
+                <button class="button button-dark icon ion-ios7-gear-outline" style="width:100%">
+                    Settings
+                </button>
+            </div>
+
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>

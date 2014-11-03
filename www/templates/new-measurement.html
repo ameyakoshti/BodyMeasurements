@@ -1,0 +1,88 @@
+<script id="new-measurement.html" type="text/ng-template">
+
+    <div class="modal">
+        <!-- Modal header bar -->
+        <ion-header-bar class="bar-secondary">
+            <h1 class="title">Set Your Measurements</h1>
+            <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
+        </ion-header-bar>
+
+        <!-- Modal content area -->
+        <ion-content>
+
+            <form ng-submit="createTask(task)">
+                <div class="list">
+                    <label class="item item-input">
+                        <div class="col-50">
+                            <input type="number" placeholder="Chest" ng-model="task.Chest">
+                        </div>
+                        <div class="col-50">
+                            <label>inch</label>
+                        </div>
+                    </label>
+                    <label class="item item-input">
+                        <div class="col-50">
+                            <input type="number" placeholder="Arms" ng-model="task.Arms">
+                        </div>
+                        <div class="col-50">
+                            <label>inch</label>
+                        </div>
+                    </label>
+                    <label class="item item-input">
+                        <div class="col-50">
+                            <input type="number" placeholder="Waist" ng-model="task.Waist">
+                        </div>
+                        <div class="col-50">
+                            <label>inch</label>
+                        </div>
+                    </label>
+                    <label class="item item-input">
+                        <div class="col-50">
+                            <input type="number" placeholder="Thigh" ng-model="task.Thigh">
+                        </div>
+                        <div class="col-50">
+                            <label>inch</label>
+                        </div>
+                    </label>
+                    <label class="item item-input">
+                        <div class="col-50">
+                            <input type="number" placeholder="Calf" ng-model="task.Calf">
+                        </div>
+                        <div class="col-50">
+                            <label>inch</label>
+                        </div>
+                    </label>
+                    <label class="item item-input">
+                        <div class="col-50">
+                            <input type="number" placeholder="Weight" ng-model="task.Weight">
+                        </div>
+                        <div class="col-50">
+                            <label>lb</label>
+                        </div>
+                    </label>
+                    <label class="item item-input">
+                        <div class="col-50">
+                            <input type="number" placeholder="Height" ng-model="task.Height">
+                        </div>
+                        <div class="col-50">
+                            <label>inch</label>
+                        </div>
+                    </label>
+                    <label class="item item-input">
+                        <div class="col-50">
+                            <input type="number" placeholder="Body Fat" ng-model="task.Fat">
+                        </div>
+                        <div class="col-50">
+                            <label>%</label>
+                        </div>
+                    </label>
+                </div>
+                <div class="padding">
+                    <button type="submit" class="button button-block button-positive">Add</button>
+                </div>
+            </form>
+
+        </ion-content>
+    </div>
+
+</script>
